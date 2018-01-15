@@ -1,15 +1,22 @@
 package com.othercorp.ws;
 
-import esi.ws.helloworld.service.HelloService;
-import esi.ws.helloworld.service.HelloServiceService;
+//import esi.ws.helloworld.service.HelloService;
+//import esi.ws.helloworld.service.HelloServiceService;
 
 public class HelloClient {
 
     public static void main(String[] args) {
-        HelloServiceService service = new HelloServiceService();
-        HelloService port = service.getHelloServicePort();
+//        --------------------------------------------------------------------------
+//        Der Code benötigt die Service-Klassen
+//        Sie müssen diese generieren mit dem Werkzeug "wsimport"
+//        So können auf Basis des WSDL-Files die .class Dateien des Service
+//        erzeugt und importiert werden
+//        --------------------------------------------------------------------------
 
-        System.out.println(port.sayHelloWorldFrom("Tester"));
+//        HelloServiceService service = new HelloServiceService();
+//        HelloService port = service.getHelloServicePort();
+//
+//        System.out.println(port.sayHelloWorldFrom("Tester"));
 
     }
 }
