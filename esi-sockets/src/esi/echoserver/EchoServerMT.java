@@ -10,7 +10,7 @@ public class EchoServerMT {
     public static void main(String[] args) {
 
         if (args.length != 1) {
-            System.err.println("Usage: java KKMultiServer <port number>");
+            System.err.println("Usage: java EchoServerMT <port number>");
             System.exit(1);
         }
 
