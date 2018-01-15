@@ -1,9 +1,5 @@
 package esi.rmi.hello;
 
-import java.rmi.registry.Registry;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.server.UnicastRemoteObject;
-
 public class HelloImpl implements Hello {
 
     private HelloImpl() {}
@@ -16,13 +12,12 @@ public class HelloImpl implements Hello {
 
         try {
             Hello obj = new HelloImpl();
-            Hello stub = (Hello) UnicastRemoteObject.exportObject(obj, 0);
+            // TODO: obj als Remote-Objekt exportieren und den Stub erhalten
 
-            // Bind the remote object's stub in the registry
-            Registry registry = LocateRegistry.getRegistry();
-            registry.bind("Hello", stub);
+            // TODO: Binding des Remote-Objekt-Stub an die Registry
 
             System.err.println("Hello-RMI-object ready");
+
         } catch (Exception e) {
             System.err.println("Hello-RMI-object exception: " + e.toString());
             e.printStackTrace();

@@ -1,8 +1,7 @@
 package esi.rmi.hello;
 
-import java.rmi.Remote;
-import java.rmi.RemoteException;
+// TODO: Implementierung die Methode sayHello() soll remote via RMI method call aufrufbar sein
 
-public interface Hello extends Remote {
-    String sayHello() throws RemoteException;
+public interface Hello {
+    String sayHello();
 }
