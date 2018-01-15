@@ -1,5 +1,6 @@
 package com.othercorp.ws;
 
+// TODO: class-Files des Service generieren aus WSDL mittels wsimport (Kommandozeile)
 //import esi.ws.customerservice.service.Customer;
 //import esi.ws.customerservice.service.CustomerService;
 //import esi.ws.customerservice.service.CustomerServiceService;

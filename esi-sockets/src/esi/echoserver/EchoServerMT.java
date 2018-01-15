@@ -17,7 +17,7 @@ public class EchoServerMT {
         int portNumber = Integer.parseInt(args[0]);
         boolean listening = true;
 
-        // Ihr Code hier ...
+        // TODO: Ihr Multithreaded-Server Code hier ...
     }
 
 }

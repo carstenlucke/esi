@@ -17,6 +17,6 @@ public class EchoServerMTThread extends Thread {
 
     public void run() {
 
-        // Ihr Code hier ...
+        // TODO: Ihr Echo-Serverthread Code hier ...
     }
 }

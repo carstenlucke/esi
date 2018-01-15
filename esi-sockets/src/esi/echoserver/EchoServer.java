@@ -18,7 +18,7 @@ public class EchoServer {
 
         int portNumber = Integer.parseInt(args[0]);
 
-        // Ihr Code hier ...
+        // TODO: Ihr Server-Code hier
 
     }
 }
