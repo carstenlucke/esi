@@ -1,36 +1,23 @@
 package esi.rmi.hello2;
 
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
-
 public class Greeter2 {
 
-
-    public static final String CLIENT_ID = "client 1";
+    // TODO: Ihr Name als client-id
+    public static final String CLIENT_ID = "IHR NAME HIER";
 
     public static void main(String[] args) {
 
         String host = (args.length < 1) ? null : args[0];
 
-        try {
+        Hello2 stub = null;
 
-            Registry registry = LocateRegistry.getRegistry(host);
-            Hello2 stub = (Hello2) registry.lookup("Hello2");
-            String response = stub.sayHello();
-            System.out.println("response: " + response);
+        // TODO: 1. Lookup des Stub in der Registry
 
-            stub.changeMessage("changed by " + CLIENT_ID);
+        String response = stub.sayHello();
+        System.out.println("response: " + response);
 
-        } catch (RemoteException re) {
-            // Fehler bei Aufrufvermittlung behandeln
-            re.printStackTrace();
+        stub.changeMessage("changed by " + CLIENT_ID);
 
-        } catch (NotBoundException nbe) {
-            // kein Stub mit logischem Namen ”Hello“ registriert
-            nbe.printStackTrace();
-        }
 
     }
 }

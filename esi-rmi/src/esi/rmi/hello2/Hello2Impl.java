@@ -1,10 +1,5 @@
 package esi.rmi.hello2;
 
-import java.rmi.RemoteException;
-import java.rmi.registry.Registry;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.server.UnicastRemoteObject;
-
 public class Hello2Impl implements Hello2 {
 
     private String message;
@@ -15,24 +10,24 @@ public class Hello2Impl implements Hello2 {
 
 
     @Override
-    public String sayHello() throws RemoteException {
-        return message;
+    public String sayHello() {
+        // TODO: Implementieren!
+        return null;
     }
 
     @Override
-    public void changeMessage(String newMessage) throws RemoteException {
-        message = newMessage;
+    public void changeMessage(String newMessage) {
+        // TODO: Implementieren!
     }
 
     public static void main(String args[]) {
 
         try {
             Hello2 obj = new Hello2Impl();
-            Hello2 stub = (Hello2) UnicastRemoteObject.exportObject(obj, 0);
 
-            // Bind the remote object's stub in the registry
-            Registry registry = LocateRegistry.getRegistry();
-            registry.rebind("Hello2", stub);
+            // TODO: obj als Remote-Objekt exportieren und den Stub erhalten
+
+            // TODO: Binding des Remote-Objekt-Stub an die Registry
 
             System.err.println("Hello2Server ready");
         } catch (Exception e) {
