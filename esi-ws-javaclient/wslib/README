@@ -1,1 +1,3 @@
-Generate classes from WSDL here, using wsimport utility.
+TODO: Generate classes from WSDL here, using wsimport utility.
+
+$ wsimport http://host.com/path/to/wsdl?paramsifnecessary

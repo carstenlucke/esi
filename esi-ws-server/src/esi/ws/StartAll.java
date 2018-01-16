@@ -27,7 +27,7 @@ public class StartAll {
                 String serviceUrl = BASEURL + entry.getKey();
 
                 Endpoint.publish(serviceUrl, serviceInstance);
-                System.err.println("Publishing endpoint: " + entry.getKey() + " using URL: " + serviceUrl);
+                System.err.println("Publishing endpoint: " + entry.getKey() + ", WSDL file: " + serviceUrl + "?wsdl");
 
             } catch (InstantiationException e) {
                 e.printStackTrace();

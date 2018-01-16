@@ -2,6 +2,11 @@
 
 <endpoints xmlns='http://java.sun.com/xml/ns/jax-ws/ri/runtime' version='2.0'>
 
+    <!-- TODO: INFO - Sie müssen hier nichts verändern
+
+        Die Service-Endpoints sind hier registriert und werden über das zentrale Servlet ausgeliefert.
+        Siehe WEB-INF/web.xml - JAX-WS endpoint
+    -->
     <endpoint
             name='HelloWorld'
             implementation='esi.ws.helloworld.service.HelloService'
