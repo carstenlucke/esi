@@ -1,22 +1,28 @@
 package com.othercorp.ws;
 
-import esi.ws.customerservice.service.Customer;
-import esi.ws.customerservice.service.CustomerService;
-import esi.ws.customerservice.service.CustomerServiceService;
 
-import java.util.List;
+import esi.ws.customer.CustomerService;
+import esi.ws.customer.dao.CustomerDAO;
+
+import javax.xml.namespace.QName;
+import javax.xml.ws.Service;
+import java.net.URL;
 
 public class CustomerServiceClient {
+    public static void main(String[] args) throws Exception {
 
+        URL url = new URL("http://localhost:9000/customerservice?wsdl");
 
-    public static void main(String[] args) {
-        CustomerServiceService service = new CustomerServiceService();
-        CustomerService port = service.getCustomerServicePort();
+        //1st argument service URI, refer to wsdl document above
+        //2nd argument is service name, refer to wsdl document above
+        QName qname = new QName("http://customer.ws.esi/", "CustomerServiceImplService");
 
-        List<Customer> customers = port.getCustomers();
+        Service service = Service.create(url, qname);
 
-        for (Customer c: customers) {
-            System.out.println(c.getFirstName() + " " + c.getLastName() + " <" + c.getEmail() + ">");
+        CustomerService srvc = service.getPort(CustomerService.class);
+
+        for(CustomerDAO c : srvc.getCustomers()) {
+            System.out.println(c);
         }
 
     }
