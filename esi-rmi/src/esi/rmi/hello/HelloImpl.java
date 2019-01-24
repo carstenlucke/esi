@@ -20,7 +20,7 @@ public class HelloImpl implements Hello {
 
             // Bind the remote object's stub in the registry
             Registry registry = LocateRegistry.getRegistry();
-            registry.bind("Hello", stub);
+            registry.rebind("Hello", stub);
 
             System.err.println("Hello-RMI-object ready");
         } catch (Exception e) {
