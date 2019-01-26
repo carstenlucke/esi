@@ -1,14 +1,9 @@
 package esi.ws.hello;
 
-import javax.jws.WebService;
-
 //Service Implementation
-@WebService(endpointInterface = "esi.ws.hello.HelloWorld")  // package + class name of IF
+// @Webservice Annotation ergänzen und endpointInterface deklarieren
 public class HelloWorldImpl implements HelloWorld {
 
-    @Override
-    public String sayHelloWorldFrom(String from) {
-        return "Hello World JAX-WS " + from;
-    }
+    // TODO: Methoden des Webservice
 
 }

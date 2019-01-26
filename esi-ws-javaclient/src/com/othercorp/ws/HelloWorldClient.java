@@ -11,17 +11,18 @@ public class HelloWorldClient {
 
     public static void main(String[] args) throws Exception {
 
-        URL url = new URL("http://localhost:9000/helloworld?wsdl");
+        // TODO: URL zum WSDL-File
+        URL url = new URL("http://...");
 
-        //1st argument service URI, refer to wsdl document above
-        //2nd argument is service name, refer to wsdl document above
-        QName qname = new QName("http://hello.ws.esi/", "HelloWorldImplService");
+        //TODO: 1st argument service URI: Siehe WSDL-File:  targetNamespace="http://..."
+        //TODO: 2nd argument is service name: Siehe WSDL-File: name="..."
+        QName qname = new QName("attrib: targetNamespace", "attrib name");
 
         Service service = Service.create(url, qname);
 
         HelloWorld hello = service.getPort(HelloWorld.class);
 
-        System.out.println(hello.sayHelloWorldFrom("ESI @ DHBW"));
+        //TODO: Service-call ausführen und "Hallo" sagen.
 
     }
 
