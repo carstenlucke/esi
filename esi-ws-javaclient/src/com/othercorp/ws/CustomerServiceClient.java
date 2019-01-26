@@ -1,31 +1,29 @@
 package com.othercorp.ws;
 
-// TODO: class-Files des Service generieren aus WSDL mittels wsimport (Kommandozeile)
-//import esi.ws.customerservice.service.Customer;
-//import esi.ws.customerservice.service.CustomerService;
-//import esi.ws.customerservice.service.CustomerServiceService;
 
-import java.util.List;
+import esi.ws.customer.CustomerService;
+import esi.ws.customer.dao.CustomerDAO;
+
+import javax.xml.namespace.QName;
+import javax.xml.ws.Service;
+import java.net.URL;
 
 public class CustomerServiceClient {
+    public static void main(String[] args) throws Exception {
 
+        URL url = new URL("http://localhost:9000/customerservice?wsdl");
 
-    public static void main(String[] args) {
-//        --------------------------------------------------------------------------
-//        TODO: Der Code benötigt die Service-Klassen
-//        Sie müssen diese generieren mit dem Werkzeug "wsimport"
-//        So können auf Basis des WSDL-Files die .class Dateien des Service
-//        erzeugt und importiert werden
-//        --------------------------------------------------------------------------
+        //1st argument service URI, refer to wsdl document above
+        //2nd argument is service name, refer to wsdl document above
+        QName qname = new QName("http://customer.ws.esi/", "CustomerServiceImplService");
 
-//        CustomerServiceService service = new CustomerServiceService();
-//        CustomerService port = service.getCustomerServicePort();
-//
-//        List<Customer> customers = port.getCustomers();
-//
-//        for (Customer c: customers) {
-//            System.out.println(c.getFirstName() + " " + c.getLastName() + " <" + c.getEmail() + ">");
-//        }
+        Service service = Service.create(url, qname);
+
+        CustomerService srvc = service.getPort(CustomerService.class);
+
+        for(CustomerDAO c : srvc.getCustomers()) {
+            System.out.println(c);
+        }
 
     }
 }

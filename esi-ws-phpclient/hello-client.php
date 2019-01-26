@@ -10,4 +10,4 @@ $client = new SoapClient("http://localhost:9000/helloworld?wsdl");
 //var_dump($client->__getFunctions());
 //var_dump($client->__getTypes());
 
-var_dump($client->sayHelloWorldFrom(["arg0" => "Carsten"]));
+var_dump($client->sayHelloWorldFrom("ESI in PHP-Skript"));

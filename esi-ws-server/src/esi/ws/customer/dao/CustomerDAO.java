@@ -1,7 +1,7 @@
-package esi.ws.customerservice.dao;
+package esi.ws.customer.dao;
 
 
-public class Customer {
+public class CustomerDAO {
 
     private String first_name;
     private String last_name;
@@ -9,7 +9,10 @@ public class Customer {
     private Gender gender;
     private String ip_address;
 
-    public Customer(String first_name, String last_name, String email, Gender gender, String ip_address) {
+    // default constructor
+    public CustomerDAO() {}
+
+    public CustomerDAO(String first_name, String last_name, String email, Gender gender, String ip_address) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
@@ -62,4 +65,3 @@ public class Customer {
         this.ip_address = ip_address;
     }
 }
-
